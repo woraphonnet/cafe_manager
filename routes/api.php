@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('coffees', 'api\CoffeeController@index');
+Route::post('coffees/{id}', 'api\CoffeeController@create');
+Route::put('coffees/{id}', 'api\CoffeeController@update');
+Route::delete('coffees/{id}', 'api\CoffeeController@delete');
+Route::get('updload', 'api\CoffeeController@saveFile');
